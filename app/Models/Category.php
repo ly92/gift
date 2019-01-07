@@ -18,4 +18,8 @@ class Category extends Model
     protected $table = 'categories';
 
 
+    public function article(){
+        return $this->hasOne(Article::class, 'cate_id', 'id');
+    }
+
 }

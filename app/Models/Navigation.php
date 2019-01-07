@@ -15,5 +15,8 @@ class Navigation extends Model
 {
     protected $fillable = ['name', 'url', 'sequence', 'state', 'article_cate_id', 'nav_type'];
 
+    public function category(){
+        return $this->belongsTo(Category::class, 'article_cate_id', 'id');
+    }
 
 }
