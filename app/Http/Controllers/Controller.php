@@ -41,16 +41,11 @@ class Controller extends BaseController
         }elseif (strpos($last_message, 'master') === 0) {
             system('sudo git checkout master');
             system('sudo git pull');
-        }elseif(strpos($last_message,'passport') === 0){
-//            system('composer require laravel/passport');
-//            system('php artisan migrate');
-//            system('php artisan passport:install');
+        }else{
 
         }
 
-            system('sudo composer require laravel/passport');
-            system('sudo php artisan migrate');
-            system('sudo php artisan passport:install');
+
 
         return 'hello l1y!';
     }
