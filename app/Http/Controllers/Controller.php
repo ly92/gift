@@ -45,10 +45,10 @@ class Controller extends BaseController
 
         }
 
-        $ee = system('whoami');
+//        $ee = system('whoami');
 
-    return $ee;
-//        return 'hello ly!';
+//    return $ee;
+        return 'hello ly!';
     }
 
 
