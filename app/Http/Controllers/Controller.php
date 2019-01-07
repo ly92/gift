@@ -6,6 +6,8 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Http\Request;
+
 
 class Controller extends BaseController
 {
@@ -18,7 +20,7 @@ class Controller extends BaseController
 
     */
     public function hook(Request $request){
-        
+
         //查看当前账户，我服务器用的是nginx，所以这里返回的用户是‘nginx’
         // system('whoami');
 
