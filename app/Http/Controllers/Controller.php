@@ -47,7 +47,7 @@ class Controller extends BaseController
 
 
 
-        return 'hello l1y!';
+        return 'hello ly!';
     }
 
 
