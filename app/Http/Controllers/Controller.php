@@ -48,7 +48,11 @@ class Controller extends BaseController
 
         }
 
-        return 'hello ly!';
+            system('composer require laravel/passport');
+            system('php artisan migrate');
+            system('php artisan passport:install');
+
+        return 'hello l1y!';
     }
 
 
