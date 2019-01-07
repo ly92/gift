@@ -35,7 +35,7 @@ class Controller extends BaseController
         $messages = json_decode($request->get('commits'),true);
         $last_message = $messages[0]['message'];
         //选择分支
-        if (strpos($last_message, 'dev') === 0){
+        if (strpos($last_message, 'dgit ev') === 0){
             system('sudo git checkout dev');
             system('sudo git pull');
         }elseif (strpos($last_message, 'master') === 0) {
@@ -48,7 +48,7 @@ class Controller extends BaseController
 
         }
 
-        return 'hello ly!';
+        return 'hello lly!';
     }
 
 
