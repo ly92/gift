@@ -31,22 +31,20 @@ class Controller extends BaseController
         //获取最新代码
         system('sudo git pull');
 
-        // //此次push的commit内容
-        // $messages = json_decode($request->get('commits'),true);
-        // $last_message = $messages[0]['message'];
-        // //选择分支
-        // if (strpos($last_message, 'dgit ev') === 0){
-        //     system('sudo git checkout dev');
-        //     system('sudo git pull');
-        // }elseif (strpos($last_message, 'master') === 0) {
-        //     system('sudo git checkout master');
-        //     system('sudo git pull');
-        // }else{
+        //此次push的commit内容
+        $messages = json_decode($request->get('commits'),true);
+        $last_message = $messages[0]['message'];
+        //选择分支
+        if (strpos($last_message, 'dgit ev') === 0){
+            system('sudo git checkout dev');
+            system('sudo git pull');
+        }elseif (strpos($last_message, 'master') === 0) {
+            system('sudo git checkout master');
+            system('sudo git pull');
+        }else{
 
-        // }
+        }
 
-
-        
 
 
         return 'hello ly!';
