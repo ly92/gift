@@ -32,6 +32,6 @@ Route::middleware('auth')->namespace('Admin')->group(function (){
 });
 
 //登录推出
-Route::get('/login', 'Auth\LoginController@showLoginFrom')->name('login');
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
