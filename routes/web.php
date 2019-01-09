@@ -20,5 +20,16 @@ Route::get('/blog/{slug}', 'BlogController@showPost')->name('blog.detail');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//后台路由
+Route::get('/admin', function (){
+   return redirect('/admin/post');
+});
 
+Route::middleware('auth')->namespace('Admin')->group(function (){
+   Route::resource('/admin/post', 'PostController');
+   Route::resource('/admin/tag', 'TagController');
+   Route::get('admin/upload', 'UploadController@index');
+});
+
+//登录推出
+Route::get('/login', 'Auth\LoginController')
