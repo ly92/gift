@@ -26,10 +26,12 @@ Route::get('/admin', function (){
 });
 
 Route::middleware('auth')->namespace('Admin')->group(function (){
-   Route::resource('/admin/post', 'PostController');
-   Route::resource('/admin/tag', 'TagController');
+   Route::resource('admin/post', 'PostController');
+   Route::resource('admin/tag', 'TagController');
    Route::get('admin/upload', 'UploadController@index');
 });
 
 //登录推出
-Route::get('/login', 'Auth\LoginController')
+Route::get('/login', 'Auth\LoginController@showLoginFrom')->name('login');
+Route::post('/login', 'Auth\LoginController@login');
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
