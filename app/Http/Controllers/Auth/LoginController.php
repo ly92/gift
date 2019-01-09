@@ -42,4 +42,14 @@ class LoginController extends Controller
     public function showLoginForm(){
         return view('auth.login');
     }
+
+
+    public function loggedOut(Request $request){
+        return redirect('login');
+    }
+
+
 }
+
+
+
