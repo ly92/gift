@@ -29,7 +29,8 @@
                         </a>
                     </li>
                 </ul>
-                <p class="copyright text-muted">Copyright © {{ config('blog.author') }} 2018</p>
+                <!-- <p class="copyright text-muted">Copyright © {{ config('blog.author') }} 2018</p> -->
+                <a class="copyright text-muted" href="http://www.miibeian.gov.cn">豫ICP备18004992号</a>
             </div>
         </div>
     </div>
