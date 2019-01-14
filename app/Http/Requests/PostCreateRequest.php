@@ -27,7 +27,7 @@ class PostCreateRequest extends FormRequest
         return [
             'title' => 'required',
             'subtitle' => 'required',
-            'content' => 'require',
+            'content' => 'required',
             'publish_date' => 'required',
             'publish_time' => 'required',
             'layout' => 'required',

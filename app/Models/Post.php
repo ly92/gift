@@ -12,7 +12,7 @@ class Post extends Model
     protected  $fillable = ['title', 'subtitle', 'content_raw', 'page_image', 'meta_description', 'layout', 'is_draft', 'published_at'];
 
     public function tags(){
-        return $this->belongsToMany(Tag::class, 'post_tag', 'post_tag_pivot');
+        return $this->belongsToMany(Tag::class, 'post_tag_pivot');
     }
 
     public function setTitleAttribute($value){

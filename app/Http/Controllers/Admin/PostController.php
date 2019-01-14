@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\PostCreateRequest;
 use App\Http\Requests\PostUpdateRequest;
 use App\Models\Post;
 use App\Models\Tag;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class PostController extends Controller
@@ -42,8 +42,9 @@ class PostController extends Controller
      */
     public function create()
     {
+        dd('123');
         $fields = $this->fieldList;
-
+        dd('123');
         $when = Carbon::now()->addHour();
         $fields['publish_date'] = $when->format('Y-m-d');
         $fields['publish_time'] = $when->format('g:i A');
@@ -64,7 +65,7 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostCreateRequest $request)
     {
         $post = Post::create($request->postFillData());
         $post->syncTags($request->get('tags', []));
@@ -92,9 +93,8 @@ class PostController extends Controller
     public function edit($id)
     {
         $fields = $this->fieldsFromModel($id, $this->fieldList);
-
-        foreach ($fields as $fieldNmae => $fieldValue){
-            $fields[$fieldNmae] = old($fieldNmae, $fieldValue);
+        foreach ($fields as $fieldName => $fieldValue){
+            $fields[$fieldName] = old($fieldName, $fieldValue);
         }
 
         $data = array_merge(
@@ -118,7 +118,7 @@ class PostController extends Controller
         $post->syncTags($request->get('tags', []));
 
         if ($request->action === 'continue'){
-            return redirect()->back()-with('success', '文章已保存.');
+            return redirect()->back()->with('success', '文章已保存.');
         }
 
         return redirect()->route('post.index')->with('success', '文章已保存.');
