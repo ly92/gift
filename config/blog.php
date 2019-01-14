@@ -8,10 +8,15 @@
 
 
 return [
+    'name' => 'Gift Blog',
     'title' => 'Gift Blog',
-    'posts_per_page' => 5,
+    'subtitle' => 'http://liyong.work',
+    'description' => 'To be a useful people!',
+    'author' => 'ly',
+    'page_image' => 'home-bg.jpg',
+    'posts_per_page' => 10,
     'uploads' => [
         'storage' => 'public',
-        'webpath' => '/storage',
+        'webpath' => '/storage/uploads',
     ],
 ];
