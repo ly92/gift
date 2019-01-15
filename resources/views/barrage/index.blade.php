@@ -7,6 +7,20 @@
     <title>弹幕</title>
     <!-- Styles -->
     <link href="{{ asset('css/wall.css') }}" rel="stylesheet">
+
+    <script type="text/javascript">
+        // H5 plus事件处理
+        function plusReady(){
+            alert( "uuid: "+plus.device.uuid );
+        }
+        if(window.plus){
+            plusReady();
+        }else{
+            document.addEventListener("plusready",plusReady,false);
+        }
+    </script>
+
+
 </head>
 <body>
 <div id="container" class="container">
