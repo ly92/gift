@@ -35,7 +35,7 @@
 
 
         if(window.plus){
-            alert( "Vendor: " + plus.device.vendor );
+            barrageWall.upWall("images/aq.png","我是说话人",plus.device.vendor);//初始化弹幕墙
         }else{
             document.addEventListener("plusready",plusReady,false);
         }
