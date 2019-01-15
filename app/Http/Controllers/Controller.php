@@ -15,10 +15,13 @@ class Controller extends BaseController
 
 
 
-        /**
-    webhook
+    //弹幕
+    public function showBarrage(){
+        return view('barrage.index');
+    }
 
-    */
+
+    //web hook
     public function hook(Request $request){
 
         //查看当前账户，我服务器用的是nginx，所以这里返回的用户是‘nginx’
