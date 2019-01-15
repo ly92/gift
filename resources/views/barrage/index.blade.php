@@ -48,7 +48,7 @@
             var device_id = plus.device.uuid.valueOf();
             barrageWall.upWall("images/aq.png","我是说话人",device_id.substring(0, 15));//初始化弹幕墙
         }
-
+        barrageWall.upWall("images/aq.png","我是说话人","123");//初始化弹幕墙
     })
 
     $(function () {
