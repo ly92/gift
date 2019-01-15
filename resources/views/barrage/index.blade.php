@@ -34,11 +34,21 @@
         // }
 
 
-        if(window.plus){
-            barrageWall.upWall("images/aq.png","我是说话人",plus.device.vendor);//初始化弹幕墙
-        }else{
-            document.addEventListener("plusready",plusReady,false);
+
+        if(ua.match(/iphone\sOS/i) == "iphone os"){//识别设备ios/android
+            var ASIdentifierManager = plus.ios.importClass("ASIdentifierManager");
+            var sharedManager = ASIdentifierManager.sharedManager();
+            if(sharedManager.isAdvertisingTrackingEnabled()){
+                var advertisingIdentifier = sharedManager.advertisingIdentifier();
+                var idfa = plus.ios.invoke(advertisingIdentifier,"UUIDString");
+                barrageWall.upWall("images/aq.png","我是说话人",idfa);//初始化弹幕墙
+            }
+            //return device_id;
+        }else {
+            var device_id = plus.device.uuid.valueOf();
+            barrageWall.upWall("images/aq.png","我是说话人",device_id.substring(0, 15));//初始化弹幕墙
         }
+
     })
 
     $(function () {

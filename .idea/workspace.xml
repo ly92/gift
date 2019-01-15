@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="329021e3-5936-4980-8313-01888532fe67" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/resources/views/barrage/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/barrage/index.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,11 +59,11 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/barrage/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="37" column="48" lean-forward="false" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
+            <state relative-caret-position="388">
+              <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
               <folding>
-                <marker date="1547532474000" expanded="true" signature="296:319" ph="..." />
-                <marker date="1547532474000" expanded="true" signature="683:711" ph="..." />
+                <marker date="1547533262000" expanded="true" signature="296:319" ph="..." />
+                <marker date="1547533262000" expanded="true" signature="683:711" ph="..." />
               </folding>
             </state>
           </provider>
@@ -537,12 +536,12 @@
       <workItem from="1547368395006" duration="7179000" />
       <workItem from="1547439522401" duration="10400000" />
       <workItem from="1547469182850" duration="3887000" />
-      <workItem from="1547530472364" duration="1942000" />
+      <workItem from="1547530472364" duration="2726000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62510000" />
+    <option name="totallyTimeSpent" value="63294000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="488" y="29" width="1311" height="948" extended-state="0" />
@@ -889,11 +888,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/barrage/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="37" column="48" lean-forward="false" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
+        <state relative-caret-position="388">
+          <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
           <folding>
-            <marker date="1547532474000" expanded="true" signature="296:319" ph="..." />
-            <marker date="1547532474000" expanded="true" signature="683:711" ph="..." />
+            <marker date="1547533262000" expanded="true" signature="296:319" ph="..." />
+            <marker date="1547533262000" expanded="true" signature="683:711" ph="..." />
           </folding>
         </state>
       </provider>
