@@ -28,27 +28,27 @@
         // 2，如果不需要用户的头像和id，可以在js中去掉 elem 的img标签和用户名，本人因项目需要，所以就保留了 //
         // 3，实际使用时，最少应该加上 特殊字符替换 和 发送成功后清除input的内容，现在 你就当我懒吧~/////////
         /////////////////////////////////////////////////////////////////////////////////////////
-        // var vla=$(this).prev().val().replace(/(^\s*)|(\s*$)/g, "");
-        // if(vla){
-        //     barrageWall.upWall("images/aq.png","我是说话人",vla);//初始化弹幕墙
-        // }
-
-
-
-        if(ua.match(/iphone\sOS/i) == "iphone os"){//识别设备ios/android
-            var ASIdentifierManager = plus.ios.importClass("ASIdentifierManager");
-            var sharedManager = ASIdentifierManager.sharedManager();
-            if(sharedManager.isAdvertisingTrackingEnabled()){
-                var advertisingIdentifier = sharedManager.advertisingIdentifier();
-                var idfa = plus.ios.invoke(advertisingIdentifier,"UUIDString");
-                barrageWall.upWall("images/aq.png","我是说话人",idfa);//初始化弹幕墙
-            }
-            //return device_id;
-        }else {
-            var device_id = plus.device.uuid.valueOf();
-            barrageWall.upWall("images/aq.png","我是说话人",device_id.substring(0, 15));//初始化弹幕墙
+        var vla=$(this).prev().val().replace(/(^\s*)|(\s*$)/g, "");
+        if(vla){
+            barrageWall.upWall("images/aq.png","我是说话人",vla);//初始化弹幕墙
         }
-        barrageWall.upWall("images/aq.png","我是说话人","123");//初始化弹幕墙
+
+
+
+        // if(ua.match(/iphone\sOS/i) == "iphone os"){//识别设备ios/android
+        //     var ASIdentifierManager = plus.ios.importClass("ASIdentifierManager");
+        //     var sharedManager = ASIdentifierManager.sharedManager();
+        //     if(sharedManager.isAdvertisingTrackingEnabled()){
+        //         var advertisingIdentifier = sharedManager.advertisingIdentifier();
+        //         var idfa = plus.ios.invoke(advertisingIdentifier,"UUIDString");
+        //         barrageWall.upWall("images/aq.png","我是说话人",idfa);//初始化弹幕墙
+        //     }
+        //     //return device_id;
+        // }else {
+        //     var device_id = plus.device.uuid.valueOf();
+        //     barrageWall.upWall("images/aq.png","我是说话人",device_id.substring(0, 15));//初始化弹幕墙
+        // }
+        // barrageWall.upWall("images/aq.png","我是说话人","123");//初始化弹幕墙
     })
 
     $(function () {
