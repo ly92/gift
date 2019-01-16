@@ -44,3 +44,4 @@ Route::post('contact', 'ContactController@sendContractInfo');
 
 //弹幕
 Route::get('/barrage', 'Controller@showBarrage');
+Route::post('/barrage/create', 'Controller@createBarrage');

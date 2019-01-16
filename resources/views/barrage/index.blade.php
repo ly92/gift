@@ -12,10 +12,29 @@
 <body>
 <div id="container" class="container">
 </div>
+
+
+{{ $nickName ?? "123"}}
+<script>
+
+     barrageWall.upWall("images/aq.png",{{ $nickName ?? "123"}},{{ $content ?? "123"}});//初始化弹幕墙
+
+</script>
+
 <div class="input-box">
     <!--限制用户输入的文字长度，尽量避免用户输入的内容长度超过屏幕的宽度-->
-    <input type="text" maxlength="20" placeholder="说点什么吧~">
-    <button id="btn" class="btn">发送</button>
+
+
+    <form method="post" action="/barrage/create">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input name="nickName" maxlength="20" placeholder="name">
+        <input name="content" maxlength="20" placeholder="说点什么吧~">
+        <button type="submit" class="btn btn-primary">发送</button>
+    </form>
+
+
+
+
 </div>
 <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
 <!-- Scripts -->

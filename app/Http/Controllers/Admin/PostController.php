@@ -42,9 +42,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        dd('123');
         $fields = $this->fieldList;
-        dd('123');
         $when = Carbon::now()->addHour();
         $fields['publish_date'] = $when->format('Y-m-d');
         $fields['publish_time'] = $when->format('g:i A');

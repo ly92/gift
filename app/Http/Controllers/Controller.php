@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BarrageCreateRequest;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -19,6 +20,15 @@ class Controller extends BaseController
     public function showBarrage(){
         return view('barrage.index');
     }
+
+    //new barrage
+    public function createBarrage(BarrageCreateRequest $request){
+        $nickName = $request->get('nickName');
+        $content = $request->get('content');
+        return view('barrage.index', ['nickName' => $nickName, 'content' => $content]);
+    }
+
+
 
 
     //web hook
