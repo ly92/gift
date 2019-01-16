@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="329021e3-5936-4980-8313-01888532fe67" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostController.php" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
       <change beforePath="$PROJECT_DIR$/resources/views/barrage/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/barrage/index.blade.php" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -71,12 +68,12 @@
             <state relative-caret-position="330">
               <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
-                <marker date="1547627800000" expanded="true" signature="296:319" ph="..." />
-                <marker date="1547627800000" expanded="true" signature="407:426" ph="..." />
-                <marker date="1547627800000" expanded="true" signature="481:500" ph="..." />
-                <marker date="1547627800000" expanded="true" signature="505:523" ph="..." />
-                <marker date="1547627800000" expanded="true" signature="720:734" ph="..." />
-                <marker date="1547627800000" expanded="true" signature="1061:1089" ph="..." />
+                <marker date="1547627923000" expanded="true" signature="296:319" ph="..." />
+                <marker date="1547627923000" expanded="true" signature="407:426" ph="..." />
+                <marker date="1547627923000" expanded="true" signature="479:489" ph="..." />
+                <marker date="1547627923000" expanded="true" signature="490:499" ph="..." />
+                <marker date="1547627923000" expanded="true" signature="694:708" ph="..." />
+                <marker date="1547627923000" expanded="true" signature="1035:1063" ph="..." />
               </folding>
             </state>
           </provider>
@@ -681,12 +678,12 @@
       <workItem from="1547439522401" duration="10400000" />
       <workItem from="1547469182850" duration="3887000" />
       <workItem from="1547530472364" duration="3086000" />
-      <workItem from="1547624679002" duration="3091000" />
+      <workItem from="1547624679002" duration="3200000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66745000" />
+    <option name="totallyTimeSpent" value="66854000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="797" y="23" width="1123" height="948" extended-state="0" />
@@ -1151,12 +1148,12 @@
         <state relative-caret-position="330">
           <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <marker date="1547627800000" expanded="true" signature="296:319" ph="..." />
-            <marker date="1547627800000" expanded="true" signature="407:426" ph="..." />
-            <marker date="1547627800000" expanded="true" signature="481:500" ph="..." />
-            <marker date="1547627800000" expanded="true" signature="505:523" ph="..." />
-            <marker date="1547627800000" expanded="true" signature="720:734" ph="..." />
-            <marker date="1547627800000" expanded="true" signature="1061:1089" ph="..." />
+            <marker date="1547627923000" expanded="true" signature="296:319" ph="..." />
+            <marker date="1547627923000" expanded="true" signature="407:426" ph="..." />
+            <marker date="1547627923000" expanded="true" signature="479:489" ph="..." />
+            <marker date="1547627923000" expanded="true" signature="490:499" ph="..." />
+            <marker date="1547627923000" expanded="true" signature="694:708" ph="..." />
+            <marker date="1547627923000" expanded="true" signature="1035:1063" ph="..." />
           </folding>
         </state>
       </provider>

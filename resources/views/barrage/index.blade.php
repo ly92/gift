@@ -17,7 +17,7 @@
 {{ $nickName ?? "123"}}
 <script>
 
-     barrageWall.upWall("images/aq.png",{{ $nickName ?? "123"}},{{ $content ?? "123"}});//初始化弹幕墙
+     barrageWall.upWall("images/aq.png", $nickName, $content);//初始化弹幕墙
 
 </script>
 
