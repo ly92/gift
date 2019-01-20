@@ -25,7 +25,7 @@ class Controller extends BaseController
     public function createBarrage(BarrageCreateRequest $request){
         $nickName = $request->get('nickName');
         $content = $request->get('content');
-        return view('barrage.index', ['nickName' => $nickName, 'content' => $content]);
+        return view('barrage.danmu', ['nickName' => $nickName, 'content' => $content]);
     }
 
 
