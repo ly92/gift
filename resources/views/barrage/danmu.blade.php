@@ -110,20 +110,20 @@
 </div>	<!-- /container -->
 
 <!-- Social links. @TODO: replace by link/instructions in template -->
-<section id="social">
-    <div class="container">
-        <div class="wrapper clearfix">
-            <!-- AddThis Button BEGIN -->
-            <div class="addthis_toolbox addthis_default_style">
-                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-                <a class="addthis_button_tweet"></a>
-                <a class="addthis_button_linkedin_counter"></a>
-                <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-            </div>
-            <!-- AddThis Button END -->
-        </div>
-    </div>
-</section>
+{{--<section id="social">--}}
+    {{--<div class="container">--}}
+        {{--<div class="wrapper clearfix">--}}
+            {{--<!-- AddThis Button BEGIN -->--}}
+            {{--<div class="addthis_toolbox addthis_default_style">--}}
+                {{--<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>--}}
+                {{--<a class="addthis_button_tweet"></a>--}}
+                {{--<a class="addthis_button_linkedin_counter"></a>--}}
+                {{--<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>--}}
+            {{--</div>--}}
+            {{--<!-- AddThis Button END -->--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</section>--}}
 <!-- /social links -->
 
 
@@ -216,9 +216,24 @@
     function query() {
         $.get("api/barrage/list",function(data){
             var danmu_from_sql=eval(data);
+
+//            console.log(danmu_from_sql);
+
             for (var i=0;i<danmu_from_sql.length;i++){
-                var danmu_ls=eval('('+danmu_from_sql[i]+')');
-                $('#danmu').danmu("add_danmu",danmu_ls);
+
+//                console.log(danmu_from_sql[i]);
+
+                var danmu = danmu_from_sql[i];
+//                console.log(danmu["color"]);
+
+//                var danmu_ls=eval('('+danmu_from_sql[i]+')');
+//
+                var newd=
+                    { "text":danmu["text"] , "color":danmu["color"] ,"size":danmu["size"],"position":danmu["position"],"time":danmu["time"], "isnew":danmu["isnew"]};
+//
+//                console.log(danmu_ls);
+
+                $('#danmu').danmu("add_danmu",newd);
             }
         });
     }
