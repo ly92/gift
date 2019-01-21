@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>jQuery.danmu.js  jQuery弹幕插件</title>
+    <title>jQuery.danmu.js jQuery弹幕插件</title>
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
 
 
     <!-- Custom styles for our template -->
-    {{--<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >--}}
-    {{--<link rel="stylesheet" href="{{ asset('css/main.css') }}">--}}
-    {{--<link rel="stylesheet" href="assets/js/highlight/styles/monokai.css">--}}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.css') }}" media="screen" >
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('js/highlight/styles/monokai.css') }}">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -62,7 +62,7 @@
 <div class="container text-center">
     <br> <br>
 
-    <div id="danmuarea" class"text-center">
+    <div id="danmuarea" class=text-center">
     <div id="danmu" >
     </div>
 
@@ -130,13 +130,13 @@
 
 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 
-<script src="assets/js/jquery-1.11.1.min.js"></script>
-<script src="assets/js/bootstrap.js"></script>
-<script src="assets/js/headroom.min.js"></script>
-<script src="assets/js/jQuery.headroom.min.js"></script>
-<script src="assets/js/template.js"></script>
-<script src="assets/js/highlight/highlight.pack.js"></script>
-<script src="assets/js/jquery.danmu.js"></script>
+<script src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.js') }}"></script>
+<script src="{{ asset('js/headroom.min.js') }}"></script>
+<script src="{{ asset('js/jQuery.headroom.min.js') }}"></script>
+<script src="{{ asset('js/template.js') }}"></script>
+<script src="{{ asset('js/highlight/highlight.pack.js') }}"></script>
+<script src="{{ asset('js/jquery.danmu.js') }}"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 
@@ -214,7 +214,7 @@
         $.post("stone.php",{danmu:str_newd},function(data,status){alert(data)});
     }
     function query() {
-        $.get("query.php",function(data,status){
+        $.get("api/barrage/list",function(data){
             var danmu_from_sql=eval(data);
             for (var i=0;i<danmu_from_sql.length;i++){
                 var danmu_ls=eval('('+danmu_from_sql[i]+')');
@@ -229,8 +229,11 @@
         var position = document.getElementById('position').value;
         var time = $('#danmu').data("nowtime")+5;
         var size =document.getElementById('text_size').value;
-        var text_obj='{ "text":"'+text+'","color":"'+color+'","size":"'+size+'","position":"'+position+'","time":'+time+'}';
-        $.post("stone.php",{danmu:text_obj});
+
+        //保存
+        var data = {text:text, color:color, position:position, time:time, size:size, isnew:"1"};
+        $.post("api/barrage/add",data);
+
         var text_obj='{ "text":"'+text+'","color":"'+color+'","size":"'+size+'","position":"'+position+'","time":'+time+',"isnew":""}';
         var new_obj=eval('('+text_obj+')');
         $('#danmu').danmu("add_danmu",new_obj);

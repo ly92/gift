@@ -33,3 +33,7 @@ Route::group(['namespace' => 'api'], function(){
 Route::group(['middleware' => 'auth:api', 'namespace' => 'api'], function (){
    Route::get('V1/test/passport', 'UserController@passport');
 });
+
+
+Route::post('/barrage/add', 'Danmu\DanmuController@add');
+Route::get('/barrage/list', 'Danmu\DanmuController@getAll');

@@ -15,22 +15,6 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
 
-
-    //弹幕
-    public function showBarrage(){
-        return view('barrage.index');
-    }
-
-    //new barrage
-    public function createBarrage(BarrageCreateRequest $request){
-        $nickName = $request->get('nickName');
-        $content = $request->get('content');
-        return view('barrage.danmu', ['nickName' => $nickName, 'content' => $content]);
-    }
-
-
-
-
     //web hook
     public function hook(Request $request){
 
