@@ -217,22 +217,9 @@
         $.get("api/barrage/list",function(data){
             var danmu_from_sql=eval(data);
 
-//            console.log(danmu_from_sql);
-
             for (var i=0;i<danmu_from_sql.length;i++){
-
-//                console.log(danmu_from_sql[i]);
-
                 var danmu = danmu_from_sql[i];
-//                console.log(danmu["color"]);
-
-//                var danmu_ls=eval('('+danmu_from_sql[i]+')');
-//
-                var newd=
-                    { "text":danmu["text"] , "color":danmu["color"] ,"size":danmu["size"],"position":danmu["position"],"time":danmu["time"], "isnew":danmu["isnew"]};
-//
-//                console.log(danmu_ls);
-
+                var newd = { "text":danmu["text"] , "color":danmu["color"] ,"size":danmu["size"],"position":danmu["position"],"time":danmu["time"], "isnew":danmu["isnew"]};
                 $('#danmu').danmu("add_danmu",newd);
             }
         });
