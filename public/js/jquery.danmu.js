@@ -409,10 +409,13 @@ Danmu.prototype.danmu_hideall= function(){
 };
 
 Danmu.prototype.add_danmu = function(arg){
+    console.log('3');
 	if(this.$element.data("danmu_array")[arg.time]){
+        console.log('1');
 		this.$element.data("danmu_array")[arg.time].push(arg);
 	}
 	else{
+        console.log('2');
 		this.$element.data("danmu_array")[arg.time]=new Array();
 		this.$element.data("danmu_array")[arg.time].push(arg);
 	}

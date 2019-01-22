@@ -55,8 +55,7 @@
 <div class="container text-center">
     <br> <br>
     <div id="danmuarea" class=text-center">
-        <div id="danmu" >
-        </div>
+        <div id="danmu"></div>
     </div>
 </div>
 
