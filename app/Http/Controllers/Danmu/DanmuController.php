@@ -10,32 +10,32 @@ class DanmuController extends Controller
 {
 
     protected $fields = [
-//        'nickName' => '',
-//        'avatar' => '',
+        'device' => '',
+        'nickName' => '',
+        'avatar' => '',
         'text' => '',
         'color' => 'green',
         'size' => '1',
-        'position' => '0',
-        'time' => 60,
         'isnew' => '1',
     ];
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        return view('barrage.danmu');
+        return view('barrage.index');
     }
 
+    //
+    public function create()
+    {
+        return view('barrage.add');
+    }
 
 
     public function add(Request $request)
     {
-
         $danmu = new Danmu();
+
         foreach (array_keys($this->fields) as $field){
             $danmu->$field = $request->post($field);
         }
@@ -43,9 +43,12 @@ class DanmuController extends Controller
     }
 
 
+    //获取所有
     public function getAll(){
         $danmus = Danmu::all();
         return $danmus;
     }
+
+
 
 }

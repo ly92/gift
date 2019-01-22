@@ -44,3 +44,4 @@ Route::post('/contact', 'ContactController@sendContractInfo');
 
 //弹幕
 Route::get('/barrage', 'Danmu\DanmuController@index');
+Route::get('/barrage/create', 'Danmu\DanmuController@create');

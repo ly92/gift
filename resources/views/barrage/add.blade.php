@@ -54,10 +54,30 @@
 <!-- Intro -->
 <div class="container text-center">
     <br> <br>
-    <div id="danmuarea" class=text-center">
-        <div id="danmu" >
-        </div>
-    </div>
+
+    <div class="text-center ctr" >
+        <br>
+
+        发弹幕:
+        <select  name="color" id="color" >
+            <option value="white">白色</option>
+            <option value="red">红色</option>
+            <option value="green">绿色</option>
+            <option value="blue">蓝色</option>
+            <option value="yellow">黄色</option>
+        </select>
+        <select name="size" id="text_size" >
+            <option value="1">大文字</option>
+            <option value="0">小文字</option>
+        </select>
+
+        <br>
+
+        <input type="textarea" id="text" max=300 />
+        <button type="button"  onclick="send()">发送</button>
+    </div><br>
+
+
 </div>
 
 </div>	<!-- /container -->
@@ -76,10 +96,6 @@
 <script>
     (function(){
         $("#danmu").danmu({
-                // left:$("#danmuarea").offset().left,
-                // top:$("#danmuarea").offset().top,
-                // height: 445,
-                //    width: 800,
                 left:0,
                 top:0,
                 height:"100%",
@@ -93,46 +109,18 @@
         );
     })(jQuery);
 
-    query();
 
-    starter();
+    function send(){
+        var device = "";
+        var nickName = "";
+        var avatar = "";
+        var text = document.getElementById('text').value;
+        var color = document.getElementById('color').value;
+        var size =document.getElementById('text_size').value;
+        //保存
+        var data = {device:device, nickName:nickName, avatar:avatar, text:text, color:color, size:size, isnew:"1"};
 
-    function starter(){
-
-        $('#danmu').danmu('danmu_start');
-
-    }
-
-    // function pauser(){
-    //
-    //     $('#danmu').danmu('danmu_pause');
-    // }
-    // function resumer(){
-    //
-    //     $('#danmu').danmu('danmu_resume');
-    // }
-    // function stoper(){
-    //     $('#danmu').danmu('danmu_stop');
-    // }
-    //
-    // function getime(){
-    //     alert($('#danmu').data("nowtime"));
-    // }
-    //
-    // function getpaused(){
-    //     alert($('#danmu').data("paused"));
-    // }
-
-
-    function query() {
-        $.get("api/barrage/list",function(data){
-            var danmu_from_sql=eval(data);
-            for (var i=0;i<danmu_from_sql.length;i++){
-                var danmu = danmu_from_sql[i];
-                var newd = { "nickName":danmu["nickName"], "avatar":danmu["avatar"], "text":danmu["text"], "color":danmu["color"], "size":danmu["size"], "create_at":danmu["create_at"]};
-                $('#danmu').danmu("add_danmu",newd);
-            }
-        });
+        $.post("/api/barrage/add",data);
     }
 
 </script>
