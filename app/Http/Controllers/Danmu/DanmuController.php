@@ -46,6 +46,7 @@ class DanmuController extends Controller
     //获取所有
     public function getAll(){
         $danmus = Danmu::all();
+
         return $danmus;
     }
 

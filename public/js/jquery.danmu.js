@@ -236,7 +236,10 @@ var cyntax = {
  var Danmu= function (element, options) {
     this.$element	= $(element);  
     this.options	= options;
-    $(element).data("nowtime",0);
+
+    var nowtime=parseInt(new Date().getTime()/1000) - 10;
+    nowtime = 1548075976;
+    $(element).data("nowtime",nowtime);
     $(element).data("danmu_array",options.danmuss);
     $(element).data("opacity",options.opacity);
     $(element).data("paused",1);
@@ -384,9 +387,9 @@ Danmu.prototype.danmu_start = function(){
 Danmu.prototype.danmu_stop = function(){
 	this.$timer.timer('stop');
 	$('.flying').remove();
-	nowtime=0;
+	nowtime=parseInt(new Date().getTime()/1000);
 	this.$element.data("paused",1);
-	this.$element.data("nowtime",0);
+	this.$element.data("nowtime",nowtime);
 };
 
 
@@ -409,13 +412,11 @@ Danmu.prototype.danmu_hideall= function(){
 };
 
 Danmu.prototype.add_danmu = function(arg){
-    console.log('3');
+
 	if(this.$element.data("danmu_array")[arg.time]){
-        console.log('1');
 		this.$element.data("danmu_array")[arg.time].push(arg);
 	}
 	else{
-        console.log('2');
 		this.$element.data("danmu_array")[arg.time]=new Array();
 		this.$element.data("danmu_array")[arg.time].push(arg);
 	}

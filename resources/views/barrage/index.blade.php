@@ -125,11 +125,21 @@
 
     function query() {
         $.get("api/barrage/list",function(data){
+
             var danmu_from_sql=eval(data);
             for (var i=0;i<danmu_from_sql.length;i++){
                 var danmu = danmu_from_sql[i];
-                var newd = { "nickName":danmu["nickName"], "avatar":danmu["avatar"], "text":danmu["text"], "color":danmu["color"], "size":danmu["size"], "create_at":danmu["create_at"]};
-                $('#danmu').danmu("add_danmu",newd);
+
+                var date = danmu["created_at"];
+                date = date.substring(0,19);
+                date = date.replace(/-/g,'/');
+                var timestamp = new Date(date).getTime()/1000;
+
+                if (danmu['isnew'] == '1'){
+                    var newd = { "nickName":danmu["nickName"], "avatar":danmu["avatar"], "text":danmu["text"], "color":danmu["color"], "size":danmu["size"], "time":timestamp};
+                    $('#danmu').danmu("add_danmu",newd);
+                }
+
             }
         });
     }
