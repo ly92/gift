@@ -136,7 +136,7 @@
                 var timestamp = new Date(date).getTime()/1000;
 
                 if (danmu['isnew'] == '1'){
-                    var newd = { "nickName":danmu["nickName"], "avatar":danmu["avatar"], "text":danmu["text"], "color":danmu["color"], "size":danmu["size"], "time":timestamp};
+                    var newd = { "nickName":danmu["nickName"], "position":"1", "avatar":danmu["avatar"], "text":danmu["text"], "color":danmu["color"], "size":danmu["size"], "time":timestamp};
                     $('#danmu').danmu("add_danmu",newd);
                 }
 

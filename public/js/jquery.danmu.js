@@ -238,7 +238,7 @@ var cyntax = {
     this.options	= options;
 
     var nowtime=parseInt(new Date().getTime()/1000) - 10;
-    nowtime = 1548075976;
+    nowtime = 1548149611;
     $(element).data("nowtime",nowtime);
     $(element).data("danmu_array",options.danmuss);
     $(element).data("opacity",options.opacity);
@@ -412,6 +412,8 @@ Danmu.prototype.danmu_hideall= function(){
 };
 
 Danmu.prototype.add_danmu = function(arg){
+
+	console.log(arg);
 
 	if(this.$element.data("danmu_array")[arg.time]){
 		this.$element.data("danmu_array")[arg.time].push(arg);
