@@ -72,7 +72,10 @@
         </select>
 
         <br>
-
+        昵称：
+        <input type="textarea" id="nickName" max=100 />
+        <br>
+        <br>
         <input type="textarea" id="text" max=300 />
         <button type="button"  onclick="send()">发送</button>
     </div><br>
@@ -82,37 +85,15 @@
 
 </div>	<!-- /container -->
 
-<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-<script src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.js') }}"></script>
-<script src="{{ asset('js/headroom.min.js') }}"></script>
-<script src="{{ asset('js/jQuery.headroom.min.js') }}"></script>
-<script src="{{ asset('js/template.js') }}"></script>
-<script src="{{ asset('js/highlight/highlight.pack.js') }}"></script>
-<script src="{{ asset('js/jquery.danmu.js') }}"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 
 
 <script>
-    (function(){
-        $("#danmu").danmu({
-                left:0,
-                top:0,
-                height:"100%",
-                width:"100%",
-                speed:30000,
-                opacity:1,
-                font_size_small:16,
-                font_size_big:24,
-                top_botton_danmu_time:6000
-            }
-        );
-    })(jQuery);
+
 
 
     function send(){
         var device = "";
-        var nickName = "";
+        var nickName = document.getElementById('nickName').value;
         var avatar = "";
         var text = document.getElementById('text').value;
         var color = document.getElementById('color').value;

@@ -238,7 +238,7 @@ var cyntax = {
     this.options	= options;
 
     var nowtime=parseInt(new Date().getTime()/1000) - 10;
-    nowtime = 1548149611;
+    nowtime = 1548307411;
     $(element).data("nowtime",nowtime);
     $(element).data("danmu_array",options.danmuss);
     $(element).data("opacity",options.opacity);
@@ -270,6 +270,7 @@ var cyntax = {
 		repeat: options.sumtime,
 		autostart: false,
 		callback: function( index ) {
+
 			heig=$(element).height();
 			//row_conut=parseInt(heig/options.font_size_big);
 			if($(element).data("danmu_array")[$(element).data("nowtime")]){
@@ -277,7 +278,13 @@ var cyntax = {
 				for(var i=0;i<danmus.length;i++){
 					var a_danmu="<div class='flying flying2' id='linshi'></div>";
 					$(element).append(a_danmu);
-					$("#linshi").text(danmus[i].text);
+					if (danmus[i].nickName.empty){
+                        $("#linshi").text(danmus[i].text);
+					}else{
+                        $("#linshi").text(danmus[i].nickName + ":" + danmus[i].text);
+					}
+
+
 					$("#linshi").css({
 						"color":danmus[i].color
 						,"text-shadow":" 0px 0px 2px #000000"
@@ -294,6 +301,8 @@ var cyntax = {
 						$("#linshi").css({"border":"2px solid "+danmus[i].color});
 					}
 					if( danmus[i].size == 0)  $("#linshi").css("font-size",options.font_size_small);
+
+
 					if  ( danmus[i].position == 0){
 						//var top_local=parseInt(30+(options.height-60)*Math.random());//随机高度
 						var row = parseInt(row_conut*Math.random());
