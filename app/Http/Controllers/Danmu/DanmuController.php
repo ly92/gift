@@ -22,7 +22,7 @@ class DanmuController extends Controller
 
     public function index()
     {
-        return view('barrage.test');
+        return view('barrage.index');
     }
 
     //

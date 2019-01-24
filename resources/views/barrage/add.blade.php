@@ -85,14 +85,15 @@
 
 </div>	<!-- /container -->
 
-
+<script src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
+<script src="{{ asset('js/jQuery.headroom.min.js') }}"></script>
 
 <script>
 
 
 
     function send(){
-        var device = "";
+        var device = navigator.platform;
         var nickName = document.getElementById('nickName').value;
         var avatar = "";
         var text = document.getElementById('text').value;

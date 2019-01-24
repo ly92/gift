@@ -124,8 +124,8 @@
 
 
     function query() {
+        console.log('1');
         $.get("api/barrage/list",function(data){
-
             var danmu_from_sql=eval(data);
             for (var i=0;i<danmu_from_sql.length;i++){
                 var danmu = danmu_from_sql[i];
