@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -28,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -52,6 +53,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'is_admin' => ['required', 'integer'],
         ]);
     }
 
@@ -67,6 +69,29 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'is_admin' => $data['is_admin'],
         ]);
+    }
+
+
+    //注册公共账户-手机号
+    public function register2(Request $request)
+    {
+        $user = User::where('phone', $request->get('phone'))->first();
+        if ($user){
+            return '该手机号已注册';
+        }
+
+        $user = new User();
+        $user['name'] = $request->get('name');
+        $user['phone'] = $request->get('phone');
+        $user['password'] = Hash::make($request->get('password'));
+
+        $result = $user->save();
+        if ($result){
+            return 'success';
+        }else{
+            return 'fail';
+        }
     }
 }

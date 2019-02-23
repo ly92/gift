@@ -35,7 +35,7 @@ Route::middleware('auth')->namespace('Admin')->group(function (){
    Route::delete('admin/upload/folder', 'UploadController@deleteFolder');
 });
 
-//登录推出
+//登录退出
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
