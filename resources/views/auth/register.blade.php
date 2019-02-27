@@ -60,6 +60,8 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+                        <input id="is_admin" type="is_admin" class="form-control" name="is_admin" hidden="1" value="1" required>
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

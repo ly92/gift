@@ -1,24 +1,43 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ly
- * Date: 2019/1/2
- * Time: 下午10:55
- */
 
 namespace App\Models;
-
 
 use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
-    protected $fillable = ['tag_name', 'article_number'];
+    protected $fillable = ['tag', 'title', 'subtitle', 'page_image', 'meta_description', 'reverse_direction'];
 
-    protected $table = 'tags';
-
-
-    public function article(){
-        return $this->belongsToMany(Article::class, 'article_tags', 'tag_id', 'article_id');
+    /**
+     * 定义文章与标签之间多对多关联关系
+     *
+     * @return BelongsToMany
+     */
+    public function posts(){
+        return $this->belongsToMany(Post::class, 'post_tag_pivot');
     }
+
+    public static function addNeededTags(array $tags){
+        if (count($tags) === 0){
+            return;
+        }
+        $found = static::whereIn('tag', $tags)->get()->pluck('tag')->all();
+        foreach (array_diff($tags, $found) as $tag){
+            static::created([
+               'tag' => $tag,
+                'title' => $tag,
+                'subtitle' => 'Subtitle for ' . $tag,
+                'page_image' => '',
+                'meta_description' => '',
+                'reverse_direction' => false,
+            ]);
+        }
+    }
+
+
+    public static function layout($tag, $default = 'blog.index'){
+        $layout = static::where('tag', $tag)->get()->pluck('layout')->first();
+        return $layout ?: $default;
+    }
+
 }

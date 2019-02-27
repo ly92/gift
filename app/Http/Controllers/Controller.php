@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BarrageCreateRequest;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -14,11 +15,7 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
 
-
-        /**
-    webhook
-
-    */
+    //web hook
     public function hook(Request $request){
 
         //查看当前账户，我服务器用的是nginx，所以这里返回的用户是‘nginx’
@@ -35,7 +32,7 @@ class Controller extends BaseController
         $messages = json_decode($request->get('commits'),true);
         $last_message = $messages[0]['message'];
         //选择分支
-        if (strpos($last_message, 'dgit ev') === 0){
+        if (strpos($last_message, 'dev') === 0){
             system('sudo git checkout dev');
             system('sudo git pull');
         }elseif (strpos($last_message, 'master') === 0) {
