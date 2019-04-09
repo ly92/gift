@@ -8,8 +8,8 @@
 
 
 return [
-    'name' => 'Gift By Ly',
-    'title' => 'Gift By Ly',
+    'name' => '勇不言弃',
+    'title' => '勇不言弃',
     'subtitle' => 'http://liyong.work',
     'description' => 'To be a useful people!',
     'author' => 'ly',
